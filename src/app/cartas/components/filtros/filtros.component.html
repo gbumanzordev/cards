@@ -1,0 +1,22 @@
+Filtrar Por:
+
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <select class="form-control" [(ngModel)]="filtro">
+      <option value="">Seleccione un filtro</option>
+      <option value="name">Name</option>
+      <option value="type">Type</option>
+      <option value="archetype">Archetype</option>
+      <option value="race">Race</option>
+    </select>
+  </div>
+  <input type="text" [(ngModel)]="termino" class="form-control" />
+  <div class="input-group-append">
+    <button class="btn btn-primary" (click)="buscar()">Buscar</button>
+  </div>
+</div>
+<div class="my-3" *ngIf="mostrarOcultarFiltros">
+  <button class="btn btn-sm btn-warning" (click)="limpiarFiltros()">
+    Limpiar filtros
+  </button>
+</div>

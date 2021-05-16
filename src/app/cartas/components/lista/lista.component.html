@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col"><h2>Lista de Cartas</h2></div>
+</div>
+<div class="row">
+  <div class="col">
+    <app-filtros
+      (busqueda)="buscarTarjetas($event)"
+      (limpiar)="obtenerCartas()"
+    ></app-filtros>
+  </div>
+</div>
+<div class="row">
+  <div class="col lista" infiniteScroll (scrolled)="agregarCartas()">
+    <app-carta
+      *ngFor="let carta of cartasFiltradas"
+      [carta]="carta"
+    ></app-carta>
+  </div>
+</div>
